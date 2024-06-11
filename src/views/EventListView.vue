@@ -1,41 +1,19 @@
 <script setup>
 import EventCard from '@/components/EventCard.vue';
-import { ref } from 'vue';
-const events = ref(
-  [{
-    id: 5928101,
-    category: 'animal welfare',
-    title: 'cat',
-    description: 'description',
-    location: 'a place',
-    date: 'January 2012',
-    time: '12:00',
-    petsAllowed: true,
-    organiser: 'Phet Laady'
-  },
-  {
-    id: 5928102,
-    category: 'animal welfare',
-    title: 'cat',
-    description: 'description',
-    location: 'a place',
-    date: 'January 2012',
-    time: '12:00',
-    petsAllowed: true,
-    organiser: 'Phet Laady'
-  },
-  {
-    id: 5928103,
-    category: 'animal welfare',
-    title: 'cat',
-    description: 'description',
-    location: 'a place',
-    date: 'January 2012',
-    time: '12:00',
-    petsAllowed: true,
-    organiser: 'Phet Laady'
-  }]
-)
+import axios from 'axios';
+import { onMounted, ref } from 'vue';
+
+const events = ref(null)
+
+onMounted(() => {
+  axios.get('https://my-json-server.typicode.com/dltrail/real-word-vue-3/events').then((res) => {
+    events.value = res.data
+  }).catch((err) => {
+    console.log(err)
+  })
+})
+
+
 
 </script>
 
