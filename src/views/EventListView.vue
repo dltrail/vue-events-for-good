@@ -36,7 +36,6 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
 
 <template>
   <h1>Events for Good</h1>
-  Total Pages: {{ pagination }}
   <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
 
@@ -48,8 +47,8 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
       <router-link id="page-numbers" v-for="(page, i) in pagination" :key="i"
         :to="{ name: 'event-list', query: { page: page } }" rel="page 1">{{ page }}</router-link>
 
-      <router-link id="page-next" :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next"
-        v-if="hasNextPage">Next
+      <router-link id="page-next" :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next">
+        <p v-if="hasNextPage">Next</p>
       </router-link>
     </div>
   </div>
@@ -79,7 +78,8 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
 #page-next {
   content: "&#8594";
   display: inline-block;
-  margin-left: 20px
+  margin-left: 20px;
+  min-width: 42px;
 }
 
 #page-numbers {
