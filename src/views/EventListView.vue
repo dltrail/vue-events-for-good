@@ -7,7 +7,7 @@ const events = ref(null)
 const props = defineProps(['page'])
 const page = computed(() => props.page)
 const totalEvents = ref(0)
-const eventsPerPage = 1
+const eventsPerPage = 3
 
 const hasNextPage = computed(() => {
   const totalPages = Math.ceil(totalEvents.value / eventsPerPage)
@@ -44,8 +44,8 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
         <p v-if="page != 1">Previous</p>
       </router-link>
 
-      <router-link id="page-numbers" v-for="(page, i) in pagination" :key="i"
-        :to="{ name: 'event-list', query: { page: page } }" rel="page 1">{{ page }}</router-link>
+      <router-link id="page-numbers" v-for="(p, i) in  pagination " :key="i" :class="{ 'active': p == page }"
+        :to="{ name: 'event-list', query: { page: p } }" rel="page 1">{{ p }}</router-link>
 
       <router-link id="page-next" :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next">
         <p v-if="hasNextPage">Next</p>
@@ -78,7 +78,7 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
 #page-next {
   content: "&#8594";
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 12px;
   min-width: 42px;
 }
 
@@ -87,5 +87,12 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
   border: 1px solid black;
   padding: 5px 10px;
   margin-inline: 2px;
+
+
+}
+
+#page-numbers.active {
+  border: 2px solid hsla(160, 100%, 37%, 1);
+  font-weight: bold;
 }
 </style>
