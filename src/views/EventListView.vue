@@ -47,8 +47,8 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
       <router-link id="page-numbers" v-for="(p, i) in  pagination " :key="i" :class="{ 'active': p == page }"
         :to="{ name: 'event-list', query: { page: p } }" rel="page 1">{{ p }}</router-link>
 
-      <router-link id="page-next" :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next">
-        <p v-if="hasNextPage">Next</p>
+      <router-link id="page-next" :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next" v-if="hasNextPage">
+        Next
       </router-link>
     </div>
   </div>
@@ -59,12 +59,16 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 60vh;
+  position: relative;
 }
 
 #pagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  bottom: 0;
 }
 
 #page-prev {
