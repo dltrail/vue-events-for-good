@@ -38,11 +38,27 @@ const router = createRouter({
         }
       ]
     },
+
+    // Nested Redirect version 1
+    // {
+    //   path: '/event/:id',
+    //   redirect: () => {
+    //     return {
+    //       name: 'event-details'
+    //     }
+    //   },
+    //   children: [
+    //     { path: 'register', redirect: () => ({ name: 'event-register' }) },
+    //     { path: 'edits', redirect: () => ({ name: 'event-edit' }) }
+    //   ]
+    // },
+
+    // Nested Redirect version 2
     {
-      path: '/event/:id',
-      redirect: () => {
+      path: '/event/:afterEvent(.*)',
+      redirect: (to) => {
         return {
-          name: 'event-details'
+          path: '/events/' + to.params.afterEvent
         }
       }
     },
