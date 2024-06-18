@@ -1,6 +1,8 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import EventService from '@/services/EventService'
+import { RouterLink } from 'vue-router'
+
 
 const event = ref(null)
 
@@ -24,12 +26,20 @@ onMounted(() => {
 <template>
   <div class="event-details" v-if="event">
     <h1>{{ event.title }}</h1>
-    <div id="nav">
-      <router-link id="nav__link" :to="{ name: 'event-details', params: { id } }" rel="details">Details</router-link> |
-      <router-link id="nav__link" :to="{ name: 'event-details', params: { id } }" rel="register">Register</router-link>
-      |
-      <router-link id="nav__link" :to="{ name: 'event-details', params: { id } }" rel="edit">Edit</router-link>
-    </div>
+    <nav id="nav">
+      <!-- <router-link id="nav__link" :to="{ name: 'eventDetail', params: { id } }" rel="details">Details</router-link> -->
+      <!-- <router-link id="nav__link" :to="{ name: 'Register', params: { id } }" rel="register">Register</router-link> -->
+      <!-- <router-link id="nav__link" :to="{ name: 'Edit', params: { id } }" rel="edit">Edit</router-link> -->
+      <router-link id="nav-link" :to="{ name: 'event-details', params: { id } }" rel="details">
+        Details
+      </router-link> |
+      <router-link id="nav-link" :to="{ name: 'event-register', params: { id } }" rel="register">
+        Register
+      </router-link> |
+      <router-link id="nav-link" :to="{ name: 'event-edit', params: { id } }" rel="edit">
+        Edit
+      </router-link>
+    </nav>
 
     <span class="event-tag">{{ event.category }}</span>
     <p>{{ event.description }}</p>
