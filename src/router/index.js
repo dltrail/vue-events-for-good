@@ -40,10 +40,9 @@ const router = createRouter({
     },
     {
       path: '/event/:id',
-      redirect: (to) => {
+      redirect: () => {
         return {
-          name: 'event-details',
-          params: { id: to.params.id }
+          name: 'event-details'
         }
       }
     },
