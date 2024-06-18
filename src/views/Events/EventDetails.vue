@@ -24,6 +24,13 @@ onMounted(() => {
 <template>
   <div class="event-details" v-if="event">
     <h1>{{ event.title }}</h1>
+    <div id="nav">
+      <router-link id="nav__link" :to="{ name: 'event-details', params: { id } }" rel="details">Details</router-link> |
+      <router-link id="nav__link" :to="{ name: 'event-details', params: { id } }" rel="register">Register</router-link>
+      |
+      <router-link id="nav__link" :to="{ name: 'event-details', params: { id } }" rel="edit">Edit</router-link>
+    </div>
+
     <span class="event-tag">{{ event.category }}</span>
     <p>{{ event.description }}</p>
     <p>{{ event.location }}</p>
@@ -45,5 +52,9 @@ p {
   padding: 5px 10px;
   color: white;
   background-color: blue;
+}
+
+#nav {
+  padding: 20px 0;
 }
 </style>
