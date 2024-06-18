@@ -28,13 +28,13 @@ onMounted(() => {
     <span class="event-tag">{{ event.category }}</span>
 
     <nav id="nav">
-      <router-link id="nav-link" :to="{ name: 'event-details', params: { id } }" rel="details">
+      <router-link id="nav-link" :to="{ name: 'event-details' }" rel="details">
         Details
       </router-link> |
-      <router-link id="nav-link" :to="{ name: 'event-register', params: { id } }" rel="register">
+      <router-link id="nav-link" :to="{ name: 'event-register' }" rel="register">
         Register
       </router-link> |
-      <router-link id="nav-link" :to="{ name: 'event-edit', params: { id } }" rel="edit">
+      <router-link id="nav-link" :to="{ name: 'event-edit' }" rel="edit">
         Edit
       </router-link>
     </nav>
