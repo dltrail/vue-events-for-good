@@ -1,9 +1,10 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { onMounted, ref } from 'vue';
 import EventService from '@/services/EventService'
+import { RouterLink } from 'vue-router'
 
 const event = ref(null)
-
 const props = defineProps({
   id: {
     required: true
@@ -25,11 +26,19 @@ onMounted(() => {
   <div class="event-details" v-if="event">
     <h1>{{ event.title }}</h1>
     <span class="event-tag">{{ event.category }}</span>
-    <p>{{ event.description }}</p>
-    <p>{{ event.location }}</p>
-    <p>@{{ event.time }}</p>
 
-
+    <nav id="nav">
+      <router-link id="nav-link" :to="{ name: 'event-details' }" rel="details">
+        Details
+      </router-link> |
+      <router-link id="nav-link" :to="{ name: 'event-register' }" rel="register">
+        Register
+      </router-link> |
+      <router-link id="nav-link" :to="{ name: 'event-edit' }" rel="edit">
+        Edit
+      </router-link>
+    </nav>
+    <router-view :event="event" />
   </div>
 </template>
 
@@ -45,5 +54,9 @@ p {
   padding: 5px 10px;
   color: white;
   background-color: blue;
+}
+
+#nav {
+  padding: 50px 0;
 }
 </style>

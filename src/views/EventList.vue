@@ -38,21 +38,23 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
   <h1>Events for Good</h1>
   <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
-
-    <div id="pagination">
-      <router-link id="page-prev" :to="{ name: 'event-list', query: { page: page - 1 } }" rel="prev">
-        <p v-if="page != 1">Previous</p>
-      </router-link>
-
-      <router-link id="page-numbers" v-for="(p, i) in  pagination " :key="i" :class="{ 'active': p == page }"
-        :to="{ name: 'event-list', query: { page: p } }" rel="page 1">{{ p }}</router-link>
-
-      <router-link id="page-next" :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next" v-if="hasNextPage">
-        Next
+  </div>
+  <div id="pagination">
+    <div class="pagination__button prev">
+      <router-link id="page-prev" :to="{ name: 'event-list', query: { page: page - 1 } }" rel="prev" v-if="page != 1">
+        Previous
       </router-link>
     </div>
-  </div>
+    <div class="pagination__button numbers">
+      <router-link id="page-numbers" v-for="(p, i) in  pagination " :key="i" :class="{ 'active': p === page }"
+        :to="{ name: 'event-list', query: { page: p } }" rel="page 1">{{ p }}</router-link>
 
+    </div>
+    <div class="pagination__button next">
+      <router-link id="page-next" :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next"
+        v-if="hasNextPage">Next</router-link>
+    </div>
+  </div>
 </template>
 <style scoped>
 .events {
@@ -65,25 +67,33 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
 
 #pagination {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
+}
+
+.pagination__button {
+  min-width: 70px;
 }
 
 #page-prev {
-  content: "&#8592";
   display: inline-block;
   margin-right: 10px;
-  min-width: 62px;
 }
 
+/* #page-next-container {
+  min-width: 50px;
+} */
 
 #page-next {
-  content: "&#8594";
   display: inline-block;
-  margin-left: 12px;
-  min-width: 42px;
+  margin-left: -5px;
+
+}
+
+#page-next.hide {
+  visibility: hidden;
 }
 
 #page-numbers {
@@ -91,8 +101,6 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
   border: 1px solid black;
   padding: 5px 10px;
   margin-inline: 2px;
-
-
 }
 
 #page-numbers.active {
