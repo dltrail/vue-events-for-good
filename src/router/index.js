@@ -16,7 +16,7 @@ const router = createRouter({
       props: (route) => ({ page: parseInt(route.query.page) || 1 })
     },
     {
-      path: '/event/:id',
+      path: '/events/:id',
       name: 'event-layout',
       props: true,
       component: Layout,
@@ -39,10 +39,41 @@ const router = createRouter({
       ]
     },
 
+    // Nested Redirect version 1
+    // {
+    //   path: '/event/:id',
+    //   redirect: () => {
+    //     return {
+    //       name: 'event-details'
+    //     }
+    //   },
+    //   children: [
+    //     { path: 'register', redirect: () => ({ name: 'event-register' }) },
+    //     { path: 'edits', redirect: () => ({ name: 'event-edit' }) }
+    //   ]
+    // },
+
+    // Nested Redirect version 2
     {
-      path: '/about',
+      path: '/event/:afterEvent(.*)',
+      redirect: (to) => {
+        return {
+          path: '/events/' + to.params.afterEvent
+        }
+      }
+    },
+    {
+      path: '/about-us',
       name: 'about',
       component: About
+    },
+    {
+      path: '/about',
+      redirect: () => {
+        return {
+          name: 'about'
+        }
+      }
     }
   ]
 })
