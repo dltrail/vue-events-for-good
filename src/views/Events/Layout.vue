@@ -50,10 +50,12 @@ p {
 .event-tag {
   display: inline-block;
   font: 8px;
-  border: 1px solid blue;
+  border: var(--base-green);
+  opacity: 0.6;
   padding: 5px 10px;
   color: white;
-  background-color: blue;
+  background-color: var(--base-green);
+
 }
 
 #nav {
