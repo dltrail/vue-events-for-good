@@ -6,9 +6,9 @@ const props = defineProps(['event'])
 <template>
   <div class="event-details" v-if="event">
     <!-- <span class="event-tag">{{ event.category }}</span> -->
+    <p><span>location: {{ event.location }}</span> | <span>@ {{ event.time }}</span></p>
+
     <p>{{ event.description }}</p>
-    <p>{{ event.location }}</p>
-    <p>@{{ event.time }}</p>
   </div>
 </template>
 
