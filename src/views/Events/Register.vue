@@ -1,14 +1,21 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { useRouter } from 'vue-router'
-// const props = defineProps(['event'])
+import { inject } from 'vue';
+const { event } = defineProps(['event'])
 const router = useRouter()
+const GStore = inject('GStore')
 
 const register = () => {
   // if registration is successfull
+  GStore.flashMessage = "You have registered for " + event.title
+  setTimeout(() => {
+    GStore.flashMessage = ""
+  }, 3000)
   router.replace({
     name: 'event-details'
   })
+
 }
 </script>
 
