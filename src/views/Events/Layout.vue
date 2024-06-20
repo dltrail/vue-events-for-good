@@ -3,6 +3,7 @@
 import { onMounted, ref } from 'vue';
 import EventService from '@/services/EventService'
 import { RouterLink } from 'vue-router'
+import router from '@/router';
 
 const event = ref(null)
 const props = defineProps({
@@ -16,7 +17,23 @@ onMounted(() => {
     .then((res) => {
       event.value = res.data
     }).catch((err) => {
-      console.log(err)
+      // console.log(err)
+      // router.push({
+      //   name: 'not-found'
+      // })
+
+      if (err.response && err.response.status == 404) {
+        router.push({
+          name: '404Resource',
+          params: { resource: 'event' }
+        })
+      } else {
+        router.push({
+          name: 'network-error',
+        })
+      }
+
+
     })
 })
 

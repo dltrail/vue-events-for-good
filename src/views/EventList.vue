@@ -8,6 +8,8 @@ const props = defineProps(['page'])
 const page = computed(() => props.page)
 const totalEvents = ref(0)
 const eventsPerPage = 3
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const hasNextPage = computed(() => {
   const totalPages = Math.ceil(totalEvents.value / eventsPerPage)
@@ -28,6 +30,10 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
 
       }).catch((err) => {
         console.log(err)
+
+        router.push({
+          name: 'network-error',
+        })
       })
   })
 })
