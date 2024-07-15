@@ -63,7 +63,7 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
 
     <!-- TODO: Only show this if on specific authorised route -->
     <!-- TODO: Change to cross icon -->
-    <button @click="deleteEvent(event.id)">delete favourite</button>
+    <button @click="deleteEvent(event.id)">delete</button>
 
   </div>
 
