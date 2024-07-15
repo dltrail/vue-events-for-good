@@ -9,7 +9,7 @@ export const useEventStore = defineStore('eventList', {
   //getters
   actions: {
     addEvent(event) {
-      this.eventList.push({ event, id: this.id++, boosted: false })
+      this.eventList.push({ event, id: this.id++, favourite: false })
       console.log(this.eventList)
     },
     deleteEvent(eventId) {
@@ -17,11 +17,11 @@ export const useEventStore = defineStore('eventList', {
         return object.id !== eventId
       })
     },
-    toggleBoosted(eventId) {
+    toggleFavourite(eventId) {
       console.log('clicked')
       const event = this.eventList.find((object) => object.id === eventId)
       if (event) {
-        event.boosted = !event.boosted
+        event.favourite = !event.favourite
       }
     }
   }

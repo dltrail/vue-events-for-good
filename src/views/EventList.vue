@@ -10,7 +10,7 @@ const store = useEventStore()
 
 const { eventList } = storeToRefs(store)
 
-const { toggleBoosted } = store
+const { toggleFavourite } = store
 
 const events = ref(null)
 const props = defineProps(['page'])
@@ -57,8 +57,8 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
   </div>
   <EventForm />
   <div v-for="event in eventList" :key="event.id">
-    <p :class="{ boosted: event.boosted }">{{ event.event }}</p>
-    <button @click="toggleBoosted(event.id)">{{ event.boosted ? 'remove boost' : 'boost' }}</button>
+    <p :class="{ favourite: event.favourite }">{{ event.event }}</p>
+    <button @click="toggleFavourite(event.id)">{{ event.favourite ? 'remove favourite' : 'favourite' }}</button>
   </div>
 
   <!-- TODO: Move pagination to seperate ui components -->
