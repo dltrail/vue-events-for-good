@@ -9,8 +9,7 @@ import { storeToRefs } from 'pinia';
 const store = useEventStore()
 
 const { eventList } = storeToRefs(store)
-
-const { toggleFavourite } = store
+const { toggleFavourite, deleteEvent } = store
 
 const events = ref(null)
 const props = defineProps(['page'])
@@ -58,7 +57,14 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
   <EventForm />
   <div v-for="event in eventList" :key="event.id">
     <p :class="{ favourite: event.favourite }">{{ event.event }}</p>
+
+    <!-- TODO: Change to heart icon -->
     <button @click="toggleFavourite(event.id)">{{ event.favourite ? 'remove favourite' : 'favourite' }}</button>
+
+    <!-- TODO: Only show this if on specific authorised route -->
+    <!-- TODO: Change to cross icon -->
+    <button @click="deleteEvent(event.id)">delete favourite</button>
+
   </div>
 
   <!-- TODO: Move pagination to seperate ui components -->
@@ -78,6 +84,7 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
     </div>
   </div>
 </template>
+
 <style scoped>
 .events {
   display: flex;
