@@ -1,7 +1,16 @@
 <script setup>
 import EventCard from '@/components/EventCard.vue';
+import EventForm from '@/components/EventForm.vue'
 import { onMounted, ref, computed, watchEffect } from 'vue';
 import EventService from '@/services/EventService'
+import { useEventStore } from '@/stores/eventList';
+import { storeToRefs } from 'pinia';
+
+const store = useEventStore()
+
+const { eventList } = storeToRefs(store)
+
+const { toggleBoosted } = store
 
 const events = ref(null)
 const props = defineProps(['page'])
@@ -42,9 +51,17 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
 
 <template>
   <h1>Events for Good</h1>
+  <p>{{ eventList.length }}</p>
   <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
   </div>
+  <EventForm />
+  <div v-for="event in eventList" :key="event.id">
+    <p :class="{ boosted: event.boosted }">{{ event.event }}</p>
+    <button @click="toggleBoosted(event.id)">{{ event.boosted ? 'remove boost' : 'boost' }}</button>
+  </div>
+
+  <!-- TODO: Move pagination to seperate ui components -->
   <div id="pagination">
     <div class="pagination__button prev">
       <router-link id="page-prev" :to="{ name: 'event-list', query: { page: page - 1 } }" rel="prev" v-if="page != 1">
@@ -54,7 +71,6 @@ onMounted(() => { // only called on initial load so wrap api call in watchEffect
     <div class="pagination__button numbers">
       <router-link id="page-numbers" v-for="(p, i) in  pagination " :key="i" :class="{ 'active': p === page }"
         :to="{ name: 'event-list', query: { page: p } }" rel="page 1">{{ p }}</router-link>
-
     </div>
     <div class="pagination__button next">
       <router-link id="page-next" :to="{ name: 'event-list', query: { page: page + 1 } }" rel="next"
