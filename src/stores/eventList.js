@@ -9,12 +9,20 @@ export const useEventStore = defineStore('eventList', {
   //getters
   actions: {
     addEvent(event) {
-      this.toList.push({ event, id: this.id++, boosted: false })
+      this.eventList.push({ event, id: this.id++, boosted: false })
+      console.log(this.eventList)
     },
     deleteEvent(eventId) {
-      this.toList = this.toList.filter((object) => {
+      this.eventList = this.eventList.filter((object) => {
         return object.id !== eventId
       })
+    },
+    toggleBoosted(eventId) {
+      console.log('clicked')
+      const event = this.eventList.find((object) => object.id === eventId)
+      if (event) {
+        event.boosted = !event.boosted
+      }
     }
   }
 })
