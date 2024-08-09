@@ -1,33 +1,32 @@
-# Real World Vue3
+# 💚 Events for Good
 
-## Recommended IDE Setup
+## 🖥️ Stack
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Vue3
+- Typescript
 
-## Customize configuration
+### Project Setup
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
 npm install
 ```
-
+    
 ### Compile and Hot-Reload for Development
 
-```sh
+Start the server
+
+```bash
 npm run dev
+```
+
+### Lint with ESLint
+
+```bash
+npm run lint
 ```
 
 ### Compile and Minify for Production
 
-```sh
+```bash
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
