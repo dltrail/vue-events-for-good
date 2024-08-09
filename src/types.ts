@@ -1,7 +1,7 @@
 // Application types
 
 export type EventItem = {
-  id: number
+  id: string
   category: string
   title: string
   description: string
