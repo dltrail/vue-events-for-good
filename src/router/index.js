@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import { createRouter, createWebHistory, NProgress } from 'vue-router'
-import NProgress from 'nprogress'
-import EventList from '../views/EventList.vue'
-import EventDetails from '../views/Events/EventDetails.vue'
+import nProgress from 'nprogress'
+import EventList from '@/views/EventList.vue'
+import EventDetails from '@/views/Events/EventDetails.vue'
 import About from '@/views/About.vue'
 import Register from '@/views/Events/Register.vue'
 import Edit from '@/views/Events/Edit.vue'
@@ -111,7 +111,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from) => {
-  NProgress.start()
+  nProgress.start()
 
   const GStore = inject('GStore')
   const notAuthorized = true
