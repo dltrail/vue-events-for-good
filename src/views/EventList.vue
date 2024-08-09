@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import EventCard from '@/components/EventCard.vue';
 import { onMounted, ref, computed, watchEffect } from 'vue';
 import EventService from '@/services/EventService'
