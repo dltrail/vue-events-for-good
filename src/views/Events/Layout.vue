@@ -1,21 +1,27 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-<script setup>
-import { onMounted, ref } from 'vue';
+<script lang="ts">
+import {defineComponent } from 'vue';
 import EventService from '@/services/EventService'
-import { RouterLink } from 'vue-router'
 import router from '@/router';
+import {EventItem} from '@/types'
+// import { onMounted, ref, defineComponent, PropType } from 'vue';
+// import { RouterLink } from 'vue-router'
 
-const event = ref(null)
-const props = defineProps({
-  id: {
-    required: true
-  }
-})
-
-onMounted(() => {
-  EventService.getEvent(props.id)
+export default defineComponent({
+  props:{
+    id:{
+      type: String,
+      required: true
+    }
+  },
+  data(){
+  return {
+    event: {} as EventItem
+  }},
+  created(){
+  EventService.getEvent(this.id)
     .then((res) => {
-      event.value = res.data
+      this.event = res.data
     }).catch((err) => {
       // console.log(err)
       // router.push({
@@ -35,7 +41,40 @@ onMounted(() => {
 
 
     })
+  }
 })
+
+// const event = ref(null)
+// const props = defineProps({
+//   id: {
+//     required: true
+//   }
+// })
+
+// onMounted(() => {
+//   EventService.getEvent(props.id)
+//     .then((res) => {
+//       event.value = res.data
+//     }).catch((err) => {
+//       // console.log(err)
+//       // router.push({
+//       //   name: 'not-found'
+//       // })
+
+//       if (err.response && err.response.status == 404) {
+//         router.push({
+//           name: '404Resource',
+//           params: { resource: 'event' }
+//         })
+//       } else {
+//         router.push({
+//           name: 'network-error',
+//         })
+//       }
+
+
+//     })
+// })
 
 </script>
 

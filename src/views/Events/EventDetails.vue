@@ -1,6 +1,15 @@
-<script setup>
-// eslint-disable-next-line no-unused-vars
-const props = defineProps(['event'])
+<script lang="ts">
+import {defineComponent, PropType } from 'vue';
+import {EventItem} from '@/types'
+
+export default defineComponent({
+  props:{
+    event:{
+      type: Object as PropType<EventItem>,
+      required: true
+    }
+  }})
+// const props = defineProps(['event'])
 </script>
 
 <template>
