@@ -1,4 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
+<template>
+  <p>Register for event</p>
+  <button @click="register">Register Me</button>
+</template>
+
 <script setup>
 import { useRouter } from 'vue-router'
 import { inject } from 'vue';
@@ -18,11 +23,6 @@ const register = () => {
 
 }
 </script>
-
-<template>
-  <p>Register for event</p>
-  <button @click="register">Register Me</button>
-</template>
 
 <style scoped>
 button {

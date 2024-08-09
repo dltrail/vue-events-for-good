@@ -2,15 +2,16 @@
   "name": "real-word-vue",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "dev": "vite",
+    "format": "prettier --write src/",
+    "preview": "vite preview"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
     "axios": "^1.7.2",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
@@ -20,11 +21,14 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
     "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.23.0",
     "prettier": "^3.2.5",
+    "typescript": "~4.5.5",
     "vite": "^5.2.8",
     "vite-plugin-vue-devtools": "^7.0.25"
-  }
+  },
+  "type": "module"
 }

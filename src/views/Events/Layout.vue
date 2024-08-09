@@ -8,6 +8,7 @@ import router from '@/router';
 const event = ref(null)
 const props = defineProps({
   id: {
+    type: String,
     required: true
   }
 })
