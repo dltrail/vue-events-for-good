@@ -1,15 +1,13 @@
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { EventItem } from "@/types";
+import { PropType } from "vue";
 
-export default defineComponent({
-  name: 'EventCard',
-  props: {
+  defineProps({
     event: {
-      type: Object,
+      type: Object as PropType<EventItem>,
       required: true
     }
-  }
-})
+  })
 </script>
 
 <template>
