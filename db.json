@@ -2,7 +2,7 @@
   "events": [
     {
       "id": "EVT001",
-      "name": "Sustainability in Action: Green Living Workshop",
+      "title": "Sustainability in Action: Green Living Workshop",
       "date": "2024-11-05",
       "time": "10:00 AM",
       "location": "London Bridge, London",
@@ -15,7 +15,7 @@
     },
     {
       "id": "EVT002",
-      "name": "Charity Run for Homeless Support",
+      "title": "Charity Run for Homeless Support",
       "date": "2024-10-30",
       "time": "8:00 AM",
       "location": "Hyde Park, London",
@@ -28,7 +28,7 @@
     },
     {
       "id": "EVT003",
-      "name": "Women in Leadership: Empowerment Talks",
+      "title": "Women in Leadership: Empowerment Talks",
       "date": "2024-11-10",
       "time": "6:00 PM",
       "location": "Canary Wharf, London",
@@ -41,7 +41,7 @@
     },
     {
       "id": "EVT004",
-      "name": "Zero-Waste Community Market",
+      "title": "Zero-Waste Community Market",
       "date": "2024-11-15",
       "time": "11:00 AM",
       "location": "Shoreditch, London",
@@ -54,7 +54,7 @@
     },
     {
       "id": "EVT005",
-      "name": "Volunteer Day: Reforesting London’s Parks",
+      "title": "Volunteer Day: Reforesting London’s Parks",
       "date": "2024-11-20",
       "time": "9:00 AM",
       "location": "Richmond Park, London",
@@ -67,7 +67,7 @@
     },
     {
       "id": "EVT006",
-      "name": "Ethical Fashion Showcase",
+      "title": "Ethical Fashion Showcase",
       "date": "2024-12-01",
       "time": "7:00 PM",
       "location": "Covent Garden, London",
@@ -80,7 +80,7 @@
     },
     {
       "id": "EVT007",
-      "name": "Fair Trade Coffee Tasting & Discussion",
+      "title": "Fair Trade Coffee Tasting & Discussion",
       "date": "2024-11-12",
       "time": "3:00 PM",
       "location": "Camden, London",
@@ -93,7 +93,7 @@
     },
     {
       "id": "EVT008",
-      "name": "Human Rights Film Festival",
+      "title": "Human Rights Film Festival",
       "date": "2024-12-03",
       "time": "6:30 PM",
       "location": "Brixton, London",
@@ -106,7 +106,7 @@
     },
     {
       "id": "EVT009",
-      "name": "Tech for Good: Social Impact Hackathon",
+      "title": "Tech for Good: Social Impact Hackathon",
       "date": "2024-11-25",
       "time": "9:00 AM",
       "location": "King's Cross, London",
@@ -119,7 +119,7 @@
     },
     {
       "id": "EVT010",
-      "name": "Healthy Eating Cooking Class",
+      "title": "Healthy Eating Cooking Class",
       "date": "2024-12-07",
       "time": "2:00 PM",
       "location": "Fulham, London",
@@ -132,7 +132,7 @@
     },
     {
       "id": "EVT011",
-      "name": "Youth Climate Action Summit",
+      "title": "Youth Climate Action Summit",
       "date": "2024-12-15",
       "time": "10:00 AM",
       "location": "Westminster, London",
@@ -145,7 +145,7 @@
     },
     {
       "id": "EVT012",
-      "name": "Community Gardening Day",
+      "title": "Community Gardening Day",
       "date": "2024-12-18",
       "time": "9:00 AM",
       "location": "Battersea Park, London",
@@ -158,7 +158,7 @@
     },
     {
       "id": "EVT013",
-      "name": "Mindfulness & Meditation Retreat",
+      "title": "Mindfulness & Meditation Retreat",
       "date": "2024-12-20",
       "time": "8:00 AM",
       "location": "Hampstead Heath, London",
