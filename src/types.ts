@@ -1,12 +1,15 @@
 // Application types
 
 export type EventItem = {
-  id: string
-  category: string
-  title: string
-  description: string
-  location: string
-  date: string
-  time: string
-  organizer: string
+  id: string;
+  title: string;
+  date: Date;
+  time: string;
+  location: string;
+  category: string;
+  description: string;
+  cost: string;
+  organizer: string;
+  contact_email: string;
+  image: string;
 }
