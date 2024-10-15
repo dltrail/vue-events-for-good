@@ -168,58 +168,6 @@
       "organizer": "Mindfulness UK",
       "contact_email": "retreat@mindfulness.org",
       "image": "https://images.unsplash.com/photo-1555685814-5e9f18448b82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDExfG1pbmRmdWxuZXNzfGVufDB8fHx8MTY4MjE0NzM0MQ&ixlib=rb-1.2.1&q=80&w=1080"
-    },
-    {
-      "id": "EVT014",
-      "name": "Social Entrepreneurship Workshop",
-      "date": "2024-12-25",
-      "time": "1:00 PM",
-      "location": "Southwark, London",
-      "category": "Education",
-      "description": "Learn the principles of social entrepreneurship and how to create positive social change through business.",
-      "cost": "£20",
-      "organizer": "Social Impact Academy",
-      "contact_email": "info@socialimpactacademy.org",
-      "image": "https://images.unsplash.com/photo-1518770660439-4b34f8e1358b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDZ8fHNvY2lhbCUyMGVudHJlcHJlbmV1cnNoaXAlMjB3b3JrfGVufDB8fHx8MTY4MjE0NzM0Mg&ixlib=rb-1.2.1&q=80&w=1080"
-    },
-    {
-      "id": "EVT015",
-      "name": "Community Art Project Launch",
-      "date": "2024-12-28",
-      "time": "5:00 PM",
-      "location": "Islington, London",
-      "category": "Arts",
-      "description": "Join us for the launch of a community art project that celebrates local artists and culture.",
-      "cost": "Free",
-      "organizer": "Islington Arts Council",
-      "contact_email": "info@islingtonartscouncil.org",
-      "image": "https://images.unsplash.com/photo-1582580160810-72b964f6fda3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDl8fGFydHN8ZW58MHx8fHwxNjgyMTQ3MzQ3&ixlib=rb-1.2.1&q=80&w=1080"
-    },
-    {
-      "id": "EVT016",
-      "name": "Climate Action Town Hall Meeting",
-      "date": "2024-12-30",
-      "time": "7:00 PM",
-      "location": "Greenwich, London",
-      "category": "Politics",
-      "description": "A town hall meeting to discuss community climate action initiatives and strategies for the coming year.",
-      "cost": "Free",
-      "organizer": "Greenwich Climate Coalition",
-      "contact_email": "info@greenwichclimate.org",
-      "image": "https://images.unsplash.com/photo-1557422109-d4d7a95f299c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDV8fGNsYWltYXRlfGVufDB8fHx8MTY4MjE0NzM0OQ&ixlib=rb-1.2.1&q=80&w=1080"
-    },
-    {
-      "id": "EVT017",
-      "name": "Future of Work: Remote Collaboration Forum",
-      "date": "2025-01-05",
-      "time": "10:00 AM",
-      "location": "The Shard, London",
-      "category": "Technology",
-      "description": "Industry leaders discuss the future of work and the role of remote collaboration in various sectors.",
-      "cost": "£25",
-      "organizer": "Future Work London",
-      "contact_email": "info@futureworklondon.com",
-      "image": "https://images.unsplash.com/photo-1597309494902-4f5555741341?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fHJlbW90ZSUyMGNvbnRleHR8ZW58MHx8fHwxNjgyMTQ3MzUy&ixlib=rb-1.2.1&q=80&w=1080"
     }
   ]
   }
