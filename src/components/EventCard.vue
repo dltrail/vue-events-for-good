@@ -9,7 +9,7 @@ import { PropType } from "vue";
     }
   })
 </script>
-
+// TODO: UPdate event card and details page to include more event details
 <template>
   <RouterLink class="event-link" :to="{ name: 'event-details', params: { id: event.id } }">
     <div class="event-card">
