@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { EventItem } from "@/types";
 import { PropType } from "vue";
+import { formatDate } from "@/utils"
 
   defineProps({
     event: {
@@ -9,12 +10,12 @@ import { PropType } from "vue";
     }
   })
 </script>
-// TODO: UPdate event card and details page to include more event details
+
 <template>
   <RouterLink class="event-link" :to="{ name: 'event-details', params: { id: event.id } }">
     <div class="event-card">
       <h1>{{ event.title }}</h1>
-      <span>@{{ event.time }} on {{ event.date }}</span>
+      <span>@{{ event.time }} on {{ formatDate(event.date) }}</span>
     </div>
   </RouterLink>
 </template>
