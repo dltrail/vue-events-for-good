@@ -12,10 +12,13 @@ import { PropType } from "vue";
 
 <template>
   <div class="event-details" v-if="event">
-    <!-- <span class="event-tag">{{ event.category }}</span> -->
+    <span class="event-tag">{{ event.category }}</span>
     <p><span>location: {{ event.location }}</span> | <span>@ {{ event.time }}</span></p>
 
     <p>{{ event.description }}</p>
+
+    <!-- TODO: needs styling uplift/refactor -->
+    <img :src='event.image' alt="desription of image" width="250px" height="auto" />
   </div>
 </template>
 
