@@ -1,0 +1,43 @@
+
+### Hero Banner
+**Headline:**  
+"Discover Events That Matter"
+
+**Subheadline:**  
+"Explore meaningful events in London focused on ethics, community, and sustainability. Join us in making a difference, one event at a time."
+
+**Call to Action (CTA) Button:**  
+"Find Your Event"
+
+---
+
+### Call-Out Spot
+**Title:**  
+"Get Involved Today!"
+
+**Text:**  
+"Whether you're looking to volunteer, attend workshops, or participate in community discussions, there’s something for everyone. Connect with like-minded individuals and contribute to a better tomorrow."
+
+**CTA Button:**  
+"Join Our Community"
+
+---
+
+### Footer
+**About Us:**  
+"Events for Good is dedicated to promoting events that align with values of ethics, humanity, and social responsibility. Join us in creating a positive impact in your community."
+
+**Contact Us:**  
+"Have questions or suggestions? Reach out to us at: info@eventsforgood.org"
+
+**Social Media Links:**  
+- Facebook
+- Twitter
+- Instagram
+- LinkedIn
+
+**Copyright Notice:**  
+"© 2024 Events for Good. All rights reserved."
+
+---
+
